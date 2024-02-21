@@ -9,7 +9,7 @@ import store from "./store/store";
 import "bootstrap/dist/css/bootstrap.css";
 import "remixicon/fonts/remixicon.css";
 import axios  from 'axios';
-axios.defaults.baseURL="http://localhost:8081/api"
+axios.defaults.baseURL="https://back-eco.onrender.com/api"
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
