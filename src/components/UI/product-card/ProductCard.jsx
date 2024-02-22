@@ -4,12 +4,14 @@ import "../../../styles/product-card.css";
 
 // import productImg from "../../../assets/images/product_2.1.jpg";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { cartActions } from "../../../store/shopping-cart/cartSlice";
 
 import { Link } from "react-router-dom";
 
 const ProductCard = (props) => {
+
+  const { role } = useSelector(state => state.user)
   const { _id, 
     name,
     image,
@@ -41,9 +43,10 @@ const ProductCard = (props) => {
       </div>
       <div className="d-flex flex-column align-items-center justify-content-between">
         <span className="product__price mb-2">{new_price} $ </span>
-        <button className="addTOCART__btn" onClick={addToCart}>
+        {role==="user"? <button className="addTOCART__btn" onClick={addToCart}>
           Add to Cart
-        </button>
+        </button>:null}
+        
       </div>
     </div>
   );

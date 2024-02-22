@@ -61,3 +61,14 @@ color: white;
     font-size: 18px;
     font-weight: 500; 
 }
+
+@media screen and (max-width: 480px) {
+    .loginsingup-container {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .loginsingup-container button {
+        width: 100%;
+    }
+}

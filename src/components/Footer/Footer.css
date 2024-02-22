@@ -1,14 +1,15 @@
 .footer{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+   
+    align-items:center;
+   
     gap: 50px;
 }
-.footer-logo{
-    display: flex;
-    align-items: center;
-    gap:20px
+.footer-contact {
+   
+    
+    
 }
 .footer-logo p{
     color: #383838;
@@ -17,18 +18,8 @@
 
 
 }
-.footer-links{
-    display: flex;
-    list-style: none;
-    gap:50px;
-    color: #252525;
-    font-size: 20px;
 
 
-}
- .footer-links li {
-    cursor: pointer;
- }
 
 
  .footer-social-icon {
@@ -68,3 +59,24 @@ font-size:20px ;
     height: 3px;
     background: #c7c7c7;
 }
+
+#contactInfo {
+    border: 1px solid #ccc;
+    width:1000px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    
+  }
+  
+  .info-group {
+    margin-bottom: 10px;
+  }
+  
+  .info-label {
+    font-weight: bold;
+  }
+  
+  .info-value {
+    margin-left: 10px;
+  }

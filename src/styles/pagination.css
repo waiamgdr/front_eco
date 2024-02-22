@@ -25,3 +25,15 @@
 .paginationBttns a:hover {
   background: #df2020;
 }
+@media screen and (max-width: 480px) {
+  .paginationBttns {
+    width: 100%; 
+    height: auto; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+  }
+
+  .paginationBttns a {
+    margin: 5px; 
+  }
+}

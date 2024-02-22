@@ -1,6 +1,12 @@
+
+
+
+
+
+
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-//fonction  envoyer req
+
 
 export const userLogin = createAsyncThunk(
   "/login",
@@ -25,6 +31,21 @@ export const userRegister = createAsyncThunk(
   }
 );
 
+export const getalluser = createAsyncThunk('/getallproduct',async(data,{rejectWithValue, })=>{
+  try {
+    const  res= await axios.get('/getallusers',{
+      headers:{token:localStorage.getItem('token')
+  }})
+      return res.data.users
+  } catch (error) {
+      rejectWithValue(error.response.data.msg)
+}
+  
+  });
+
+
+
+ 
 
 
 const itmes =
@@ -41,7 +62,7 @@ const userslice = createSlice({
   initialState: {
     userData: itmes,
     Token: localStorage.getItem("token") || null,
-    
+    role:localStorage.getItem("data") || "",
     isLoading: false,
     error: null,
     isAuth: localStorage.getItem("isAuth") || false,
@@ -62,19 +83,24 @@ const userslice = createSlice({
       localStorage.removeItem("cartItems");
       localStorage.removeItem("totalAmount");
       localStorage.removeItem("totalQuantity");
+      localStorage.removeItem("userdata");
+      state.role="";
+      localStorage.setItem("data", state.role);
+
     },
   },
   extraReducers: (builder) => {
     builder
       .addCase(userLogin.fulfilled, (state, action) => {
         state.Token = action.payload.token;
-        state.userData = action.payload.user;
         state.isLoading = false;
         state.isAuth = true;
+        state.role=action.payload.user.role
+     state.userData=action.payload.user
         localStorage.setItem("userdata", JSON.stringify(state.userData));
         localStorage.setItem("token", state.Token);
-
         localStorage.setItem("isAuth", state.isAuth);
+        localStorage.setItem("data", state.role);
       })
       .addCase(userLogin.rejected, (state, action) => {
         state.Token = false;
@@ -84,6 +110,7 @@ const userslice = createSlice({
       
       })
       .addCase(userLogin.pending, (state, action) => {
+ 
         state.isLoading = true;
       })
       .addCase(userRegister.fulfilled, (state, action) => {
@@ -93,7 +120,6 @@ const userslice = createSlice({
         state.isAuth = true;
         localStorage.setItem("token", state.Token);
         localStorage.setItem("isAuth", state.isAuth);
-        
         localStorage.setItem("userdata", JSON.stringify(action.payload.user));
       })
       .addCase(userRegister.rejected, (state, action) => {
@@ -104,7 +130,24 @@ const userslice = createSlice({
       })
       .addCase(userRegister.pending, (state, action) => {
         state.isLoading = true;
-      });
+
+      }).addCase(getalluser.fulfilled,(state,action)=>{
+           
+        state.isLoading=false
+        state.users=action.payload
+        
+     }).addCase(getalluser.rejected,(state,action)=>{
+         
+          state.isLoading=false
+  
+      
+          state.error=action.payload
+       })
+       .addCase(getalluser.pending,(state,action)=>{
+         
+          state.isLoading=true
+          
+       });
   },
 });
 export default userslice.reducer;

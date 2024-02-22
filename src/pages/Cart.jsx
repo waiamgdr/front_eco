@@ -21,7 +21,7 @@ const Cart = () => {
 
    
   const totalAmount = useSelector((state) => state.cart.totalAmount);
-
+console.log("userdata",userData._id)
   console.log("user",user1)
   console.log("cart",cartItems)
   console.log("owner",owner) 

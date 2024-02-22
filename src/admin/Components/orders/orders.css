@@ -1,0 +1,101 @@
+.List-orders{
+    display: flex;
+    flex-direction: column;
+   align-content: space-between;
+   width: 100%;
+    
+    border-radius: 6px;
+    background: white;
+   
+}
+.listorder-format-main{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px 10px;
+    color: #454545;
+    font-size: 15px;
+    font-weight: 600;
+}
+.listorder-allorder{
+    display: flex;
+    height: 1000px;
+    width: 100%;
+   
+  
+   
+}
+.order{
+    
+    display: flex;
+   
+    
+}
+.order h5{
+    margin-left: 20px;
+    font-size: 12px;
+}
+.order img {
+    margin-right: 30px;
+}
+.hrr {
+    border: 2px solid black;
+  
+    
+
+}
+.box_order{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 700px;
+    margin-left: 120px;
+    margin-right:150px;
+    
+}
+.box_client{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ 
+    ; height: 80px;
+    width:25%
+}
+.box_client h5{
+    
+    font-size: 16px;
+    font-weight: 600;
+}
+.total{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    ; height: 80px;
+    width:25%
+}
+
+
+
+
+.infoclient{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+    ; height: 80px;
+    width:25%
+}
+.porder{ display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 700px;
+    margin-left: 120px;
+    margin-right:150px;
+    }
+.ptotal{ display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    ; height: 80px;
+    width:25%}

@@ -7,15 +7,21 @@ import Carts from "../UI/cart/Carts.jsx";
 
 import { useSelector } from "react-redux";
 
+
 const Layout = () => {
   const cartIsVisible = useSelector((state) => state.cartUi.cartIsVisible);
 console.log(cartIsVisible)
+
   return (
     <div className="d-flex flex-column vh-100 justify-content-between">
       <Header />
       {cartIsVisible && <Carts />}
+      
       <div>
+
         <Routes />
+        
+        
       </div>
       <Footer />
       

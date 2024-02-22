@@ -14,18 +14,27 @@ const Sidebar = () => {
     <div className='sidebar-item'>
         <img src={add_product_icon}/> 
         <p>Add Product</p>
+        <hr/>
     </div>
      </Link>
      <Link to ={'/listproduct'} style={{textDecoration:"none"}}>
     <div className='sidebar-item'>
         <img src={list_product_icon}/> 
         <p>List Product</p>
+        <hr/>
     </div>
      </Link>
      <Link to ={'/alluser'} style={{textDecoration:"none"}}>
     <div className='sidebar-item'>
         <img  className="user" src={user_group_icon}/> 
         <p>All Users</p>
+        <hr/>
+    </div>
+    </Link>
+     <Link to ={'/orders'} style={{textDecoration:"none"}}>
+    <div className='sidebar-item'>
+        <img  className="user" src={user_group_icon}/> 
+        <p>All  Orders </p>
     </div>
      </Link>
 

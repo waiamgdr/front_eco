@@ -6,20 +6,15 @@ import Sidebar from '../../Components/Sidebar/Sidebar'
 import './Admin.css'
 import{Routes,Route} from 'react-router-dom'
 import Dashbord from "../../Dashbord"
+import Order from "../../Components/dhashbord/Order";
 const Admin = () => {
   return (
     <div  className="admin">
 
  <Sidebar/>
-<Routes>
+<Order/>
 
-    
-    <Route  path='/addproduct' element={<AddProduct/>}/>
-    <Route  path='/listproduct' element={<ListProduct/>}/>
-    <Route  path='/alluser' element={<Alluser/>} />
 
-    
-</Routes>
 
 
 
